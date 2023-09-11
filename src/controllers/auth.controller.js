@@ -4,7 +4,7 @@ import { createUser,
          getUserById,
          getUserByEmailAndPassword } from "../models/User.js";
 import { UserModel } from "../models/User.js";
-
+import jwt from 'jsonwebtoken';
 
 // Controller for user login
 export const ctrlLoginUser = async (req, res) => {
