@@ -7,9 +7,7 @@ import dotenv from "dotenv";
 dotenv.config();
 import { environments } from "./src/config/environments.js";
 import { connectToDatabase } from "./src/config/db.js";
-import { userRouter } from "./src/routes/user.routes.js";
-import { authRouter } from "./src/routes/auth.routes.js";
-import { roleRouter } from "./src/routes/roles.routes.js";
+import { router } from "./src/routes/routes.js";
 import "./src/models/User.js";
 
 const app = express();
@@ -22,11 +20,7 @@ app.use(express.json())
 
 
 //Routes are established
-app.use('/users', userRouter)
-
-app.use('/auth', authRouter)
-
-app.use('/test', roleRouter)
+app.use('/', router);
 
 
 // Starting the server
